@@ -7,14 +7,14 @@ before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
 
 stages:
-  - bulid
+  - build
   - test
   - deploy
 
-bulid:
-  stage: bulid
+build:
+  stage: build
   script:
-    - gradle bulid
+    - gradle build
 
 test:
   stage: test
