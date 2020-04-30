@@ -1,0 +1,62 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'com.bot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+jacoco {
+    toolVersion = "0.8.5"
+}
+
+jacocoTestReport {
+    reports {
+        html.enabled true
+    }
+
+    // Gradle > 6.0 not deprecated
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: [])
+        }))
+    }
+}
+
+test.finalizedBy jacocoTestReport
+
+
+// Project-wide constants
+ext.java_version = '1.8'
+ext.java_version = '1.8'
+ext.junit4_version = '4.13'
+ext.junit5_jupiter_version = '5.6.0'
+ext.mockito_version = '3.2.4'
+ext.project_rootdir = project.rootDir.toString()
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.linecorp.bot:line-bot-spring-boot:3.3.1'
+    implementation 'com.linecorp.bot:line-bot-servlet:3.3.1'
+    implementation 'com.linecorp.bot:line-bot-model:3.3.1'
+    implementation 'com.linecorp.bot:line-bot-api-client:3.3.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: mockito_version
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: junit5_jupiter_version
+    runtime("com.h2database:h2:1.4.199")
+}
+
+test {
+    useJUnitPlatform();
+}

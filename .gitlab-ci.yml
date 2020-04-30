@@ -1,0 +1,24 @@
+image: gradle:6.2-jdk11
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+stages:
+  #  - bulid
+  - test
+
+#bulid:
+#  stage: bulid
+#  script:
+#    - gradle bulid
+
+test:
+  stage: test
+  script:
+    - gradle test
+    - gradle check --stacktrace --info
+    - gradle jacocoTestReport
+    - cat build/reports/jacoco/test/html/index.html
