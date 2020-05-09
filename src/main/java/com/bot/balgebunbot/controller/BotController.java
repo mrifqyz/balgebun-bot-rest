@@ -85,7 +85,7 @@ public class BotController {
         return ResponseEntity.ok(botService.getAllItem());
     }
 
-    @GetMapping("/item/{id}")
+    @GetMapping("/item/{itemID}")
     public ResponseEntity<Item> findItemById(@PathVariable String itemID) {
         return ResponseEntity.of(botService.getItem(itemID));
     }

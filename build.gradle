@@ -37,7 +37,6 @@ jacocoTestReport {
 
 test.finalizedBy jacocoTestReport
 
-
 // Project-wide constants
 ext.java_version = '1.8'
 ext.java_version = '1.8'
