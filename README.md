@@ -1,20 +1,115 @@
-## Coverage & Pipeline  
+# REST API for Balgebun Bot
 
-## Master
-[![pipeline status](https://gitlab.com/adpro-15/balgebun-bot/badges/master/pipeline.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/master)
-[![coverage report](https://gitlab.com/adpro-15/balgebun-bot/badges/master/coverage.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/master)
+URL: [https://blgbnrest.herokuapp.com](https://blgbnrest.herokuapp.com)
 
-###  Database Branch
-[![pipeline status](https://gitlab.com/adpro-15/balgebun-bot/badges/database/pipeline.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/database)
-[![coverage report](https://gitlab.com/adpro-15/balgebun-bot/badges/database/coverage.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/database)
+A REST API for 2020 Advanced Programming Course Group Project of Group A15. This repository contains the database service for the LINE bot. All of the endpoints listed here are basic CRUD endpoints for the entity.
 
-### UI/UX Branch
+## Endpoint Customer
 
-### Purchase Branch
-[![pipeline status](https://gitlab.com/adpro-15/balgebun-bot/badges/purchase/pipeline.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/purchase)
-[![coverage report](https://gitlab.com/adpro-15/balgebun-bot/badges/purchase/coverage.svg)](https://gitlab.com/adpro-15/balgebun-bot/-/commits/purchase)
+```http
+GET /database/customer/
+```
 
-### Promo Branch
+```http
+POST /database/customer/
+```
 
-### Menu Branch
-``TODO NEXT``
+```http
+GET /database/customer/{username}
+```
+
+```http
+PUT /database/customer/{username}
+```
+
+```http
+DELETE /database/customer/{username}
+```
+
+## Endpoint Seller
+
+```http
+GET /database/seller/
+```
+
+```http
+POST /database/seller/
+```
+
+```http
+GET /database/seller/{username}
+```
+
+```http
+PUT /database/seller/{username}
+```
+
+```http
+DELETE /database/seller/{username}
+```
+
+## Endpoint Item
+
+```http
+GET /database/item/
+```
+
+```http
+POST /database/item/
+```
+
+```http
+GET /database/item/{itemID}
+```
+
+```http
+PUT /database/item/{itemID}
+```
+
+```http
+DELETE /database/item/{itemID}
+```
+
+## Endpoint Review
+
+```http
+GET /database/review/
+```
+
+```http
+POST /database/review/
+```
+
+```http
+GET /database/review/{reviewID}
+```
+
+```http
+PUT /database/review/{reviewID}
+```
+
+```http
+DELETE /database/review/{reviewID}
+```
+
+## Endpoint Purchase
+
+```http
+GET /database/purchase/
+```
+
+```http
+POST /database/purchase/
+```
+
+```http
+GET /database/purchase/{purchaseID}
+```
+
+```http
+PUT /database/purchase/{purchaseID}
+```
+
+```http
+DELETE /database/purchase/{purchaseID}
+```
